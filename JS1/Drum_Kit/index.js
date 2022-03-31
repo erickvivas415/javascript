@@ -2,21 +2,19 @@
 
 var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 for(var i = 0; i<numberOfDrumButtons ; i++){
-    document.querySelectorAll(".drum")[i].addEventListener("click", handleClick);
-    
-    console.log(this);
-}
+    document.querySelectorAll(".drum")[i].addEventListener("click", function(){
+        var buttonInnerHtml = this.innerHTML;
+        makeSound(buttonInnerHtml);
+    });
+};
 
-function handleClick() {
-    console.log(this);
+document.addEventListener("keydown", function (event){
+    makeSound(event.key);
+});
 
-    var a = this;
-    this.style.color = "white";
-    setTimeout(function(){
-        a.style.color = "#DA0463";
-    }, 800);
-    var buttonInnerHtml = this.innerHTML;
-    switch(buttonInnerHtml) {
+function makeSound(key) {
+    console.log(this); 
+    switch(key) {
         case "w": 
                 var tom1 = new Audio("sounds/tom-1.mp3");
                 tom1.play();
@@ -47,4 +45,4 @@ function handleClick() {
             break;
     }
     
-}
+};
