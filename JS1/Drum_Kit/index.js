@@ -4,16 +4,29 @@ var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 for(var i = 0; i<numberOfDrumButtons ; i++){
     document.querySelectorAll(".drum")[i].addEventListener("click", function(){
         var buttonInnerHtml = this.innerHTML;
+        changeColor(buttonInnerHtml)
         makeSound(buttonInnerHtml);
     });
 };
 
 document.addEventListener("keydown", function (event){
+    //changeColor(event.key);
     makeSound(event.key);
+    changeColor(event.key);
 });
 
+function changeColor(letter) {
+    const keyDown = document.querySelector("."+letter);
+    console.log(keyDown);
+    keyDown.classList.add("pressed");
+    setTimeout(function(){
+        keyDown.classList.remove("pressed");
+    }, 700);
+};
+
 function makeSound(key) {
-    console.log(this); 
+    console.log(this);
+
     switch(key) {
         case "w": 
                 var tom1 = new Audio("sounds/tom-1.mp3");
