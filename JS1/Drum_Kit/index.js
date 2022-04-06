@@ -10,7 +10,6 @@ for(var i = 0; i<numberOfDrumButtons ; i++){
 };
 
 document.addEventListener("keydown", function (event){
-    //changeColor(event.key);
     makeSound(event.key);
     changeColor(event.key);
 });
@@ -25,8 +24,6 @@ function changeColor(letter) {
 };
 
 function makeSound(key) {
-    console.log(this);
-
     switch(key) {
         case "w": 
                 var tom1 = new Audio("sounds/tom-1.mp3");
@@ -57,5 +54,4 @@ function makeSound(key) {
                 audio.play();
             break;
     }
-    
 };
