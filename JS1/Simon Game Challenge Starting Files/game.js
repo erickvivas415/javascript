@@ -19,9 +19,12 @@ $(".btn").click(function(){
     userClickedPattern.push(userChosenColour);
     playSound(userChosenColour);
     animatedPress(userChosenColour);
+    checkAnswer(level);
 });
 
 function nextSequence() {
+    level++;
+    $("h1").html("Level "+level);
     var randomNumber = Math.floor(Math.random()*4);
     console.log(randomNumber);
 
@@ -31,8 +34,6 @@ function nextSequence() {
 
     $("#"+randomChosenColour).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
     playSound(randomChosenColour);
-    $("h1").html("Level "+level);
-    level++;
 };
 
 document.addEventListener("keydown", function (event){
@@ -46,11 +47,17 @@ function playSound(name) {
 //nextSequence();
 
 
-$("body").keydown(nextSequence());
+//$(document).keydown(nextSequence());
 
 function animatedPress(currentColour) {
     $("#" + currentColour).addClass("pressed");
     setTimeout(function() {
         $("#" + currentColour).removeClass("pressed");
     }, 100);
+};
+
+function checkAnswer(currentLevel) {
+    if(gamePattern[currentLevel]!=userClickedPattern[currentLevel]) {
+        $("h1").html("Game Over!!");
+    }
 };
