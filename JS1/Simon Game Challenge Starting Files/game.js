@@ -22,6 +22,8 @@ $(".btn").click(function(){
     checkAnswer(level);
 });
 
+// Find a way to move forward to next item  after checking click
+
 function nextSequence() {
     level++;
     $("h1").html("Level "+level);
