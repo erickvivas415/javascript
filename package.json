@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/erickvivas415/javascript/issues"
   },
-  "homepage": "https://github.com/erickvivas415/javascript#readme"
+  "homepage": "https://github.com/erickvivas415/javascript#readme",
+  "dependencies": {
+    "superheroes": "^3.0.0"
+  }
 }
