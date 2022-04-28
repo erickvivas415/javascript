@@ -1,0 +1,19 @@
+{
+  "name": "intro2node",
+  "version": "1.0.0",
+  "description": "Practice node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erickvivas415/javascript.git"
+  },
+  "author": "Erick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erickvivas415/javascript/issues"
+  },
+  "homepage": "https://github.com/erickvivas415/javascript#readme"
+}
